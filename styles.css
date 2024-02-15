@@ -21,127 +21,98 @@
 
 body {
   background-color: var(--dark-grey);
-  font-family: Arial, sans-serif; /* Added for consistency */
+  font-family: Arial, sans-serif;
   color: var(--light-grey);
+  padding: 20px;
 }
 
 header {
   text-align: center;
-  padding: 20px; /* Increased padding */
 }
 
 h1 {
-  font-size: 2.5rem;
-  margin: 20px 0;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .rules-container {
   display: none;
   background-color: var(--light-grey);
   color: var(--black);
-  width: 90%; /* Adjusted for better readability on smaller screens */
+  width: 95%;
   margin: 20px auto;
-  padding: 10px; /* Added padding */
+  padding: 20px;
   border-radius: 10px;
   overflow-y: auto;
 }
 
 .rules-container ul {
   list-style-type: none;
-  padding: 0 20px; /* Added padding for readability */
-}
-
-.points {
-  margin-top: 15px;
+  padding: 0;
 }
 
 main {
-  background-color: var(--light-grey);
-  padding: 20px;
   display: flex;
-  flex-direction: column; /* Changed for mobile-first approach */
-  gap: 1rem;
-  margin: auto;
-  justify-items: center;
-  width: 90%; /* Adjusted for mobile */
-  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 #dice {
   display: flex;
-  flex-wrap: wrap; /* Allow dice to wrap on smaller screens */
   justify-content: space-around;
-  margin-bottom: 15px;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .die {
-  width: 60px; /* Adjusted for visibility */
-  height: 60px; /* Adjusted for visibility */
-  text-align: center;
-  border: 2px solid var(--black); /* Adjusted border size */
-  padding: 10px;
-  margin: 5px; /* Adjusted for spacing */
-  background-color: var(--white); /* Added background color */
-  font-size: 1.5rem; /* Increased font size */
-}
-
-.rounds-text {
-  text-align: center;
-  margin: 10px 0; /* Added margin for spacing */
-}
-
-input[type="radio"]:disabled + label {
-  color: var(--grey);
-}
-
-#score-history {
-  margin-top: 15px;
-  text-align: center;
-  list-style-position: inside;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--black);
+  margin: 5px;
+  font-size: 24px;
+  background-color: var(--white);
 }
 
 .btn {
   cursor: pointer;
-  width: 90%; /* Adjusted for mobile */
-  margin: 10px auto; /* Centered buttons */
-  color: var(--black);
+  padding: 10px 20px;
   background-color: var(--gold);
-  background-image: linear-gradient(var(--golden-yellow), var(--orange));
-  border: none; /* Removed border */
-  border-radius: 5px; /* Added border radius */
-  padding: 15px; /* Increased padding for larger tap area */
-  font-size: 1rem; /* Adjusted font size */
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: var(--black);
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
 }
 
-.btn:hover:enabled {
-  background-image: linear-gradient(var(--yellow), var(--dark-orange));
+.btn:hover {
+  background-color: var(--orange);
 }
 
-@media (max-width: 992px) {
-  main {
+@media (max-width: 768px) {
+  .die {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  .rules-container {
     width: 100%;
-  }
-}
-
-@media (max-width: 500px) {
-  h1, .points, label {
-    font-size: 1.5rem; /* Adjusted for readability */
-  }
-
-  .die, .btn {
-    width: 80%; /* Made dice and buttons wider */
-    margin: 10px auto; /* Center align for better access */
-    padding: 15px; /* Increased padding */
-  }
-
-  .rules-container, #scores {
-    width: 95%; /* Increased width for better visibility */
-    font-size: 1rem; /* Adjusted font size for better readability */
-    padding: 15px; /* Increased padding */
-  }
-
-  input[type="radio"] + label {
-    display: block; /* Ensure labels are block-level for larger tap area */
-    margin: 5px 0; /* Added margin for spacing */
+    padding: 15px;
   }
 }
