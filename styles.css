@@ -28,10 +28,12 @@ body {
 
 header {
   text-align: center;
+  padding-bottom: 20px;
 }
 
 h1 {
   font-size: 2rem;
+  color: var(--white);
   margin-bottom: 20px;
 }
 
@@ -75,11 +77,14 @@ main {
   margin: 5px;
   font-size: 24px;
   background-color: var(--white);
+  color: var(--black);
+  font-weight: bold;
 }
 
 .btn {
   cursor: pointer;
   padding: 10px 20px;
+  margin: 10px 5px;
   background-color: var(--gold);
   border: none;
   border-radius: 5px;
@@ -87,6 +92,7 @@ main {
   color: var(--black);
   text-transform: uppercase;
   transition: background-color 0.3s ease;
+  display: inline-block;
 }
 
 .btn:hover {
@@ -107,12 +113,19 @@ main {
   }
 
   .btn {
-    padding: 8px 15px;
     font-size: 0.9rem;
+    padding: 8px 15px;
+    margin: 10px 2px;
   }
 
-  .rules-container {
+  .rules-container, #scores {
     width: 100%;
     padding: 15px;
+  }
+
+  .die {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
   }
 }
